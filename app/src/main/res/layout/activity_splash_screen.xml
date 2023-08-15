@@ -16,16 +16,16 @@
 
         <ImageView
             android:layout_width="60dp"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
-            android:src="@drawable/mart"/>
+            android:src="@drawable/wallet" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:fontFamily="@font/rye"
-            android:text="Mart"
+            android:gravity="center"
+            android:text="@string/Mobile_Name"
             android:textColor="@color/white"
             android:textSize="50sp" />
     </LinearLayout>
