@@ -14,7 +14,7 @@ import com.samfrosh.martmobile.R;
 public class StagingScreen extends AppCompatActivity {
     Button swipeBtn;
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
