@@ -1,11 +1,11 @@
 package com.samfrosh.martmobile.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.samfrosh.martmobile.MainActivity;
 import com.samfrosh.martmobile.OnSwipeTouchListener;
