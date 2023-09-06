@@ -11,21 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/menu"/>
+            android:src="@drawable/menu" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentEnd="true"
-            android:layout_height="25dp"
             android:layout_gravity="end"
-            android:src="@drawable/notification"/>
+            android:src="@drawable/notifications" />
 
     </RelativeLayout>
 
@@ -34,7 +34,7 @@
         android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/head_navigation">
@@ -42,26 +42,24 @@
     </FrameLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="20dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/raduis"
+        android:padding="8dp"
+        android:textDirection="firstStrong"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        app:itemBackground="@android:color/transparent"
+        app:itemIconTint="@drawable/icon_color_state"
+        app:itemTextAppearanceActive="@font/open_sans"
+        app:itemTextColor="@color/brown"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/raduis"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:itemTextAppearanceActive="@font/open_sans"
-            app:itemIconTint="@drawable/icon_color_state"
-            app:labelVisibilityMode="selected"
-            app:menu="@menu/menu" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
