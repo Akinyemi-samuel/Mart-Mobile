@@ -15,10 +15,18 @@
         app:hideNavigationIcon="true"
         app:navigationIcon="@drawable/searchbaricon"
         tools:ignore="HardcodedText">
-
     </com.google.android.material.search.SearchBar>
 
-    <include layout="@layout/main_product_display"/>
+    <include layout="@layout/main_product_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 
 </LinearLayout>

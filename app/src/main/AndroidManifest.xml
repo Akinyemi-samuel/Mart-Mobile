@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MartMobile"
         tools:targetApi="31">
         <activity
+            android:name=".activity.Notification"
+            android:exported="false" />
+        <activity
             android:name=".activity.StagingScreen"
             android:exported="false" />
         <activity

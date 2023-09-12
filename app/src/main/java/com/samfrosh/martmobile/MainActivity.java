@@ -1,5 +1,6 @@
 package com.samfrosh.martmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -10,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationBarView;
+import com.samfrosh.martmobile.activity.Notification;
 import com.samfrosh.martmobile.databinding.ActivityMainBinding;
 import com.samfrosh.martmobile.fragment.Cart;
 import com.samfrosh.martmobile.fragment.Home;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //sets the default fragment to show on startup
         replaceFragment(new Home());
 
         binding.bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -43,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             }
+        });
+
+
+        binding.notification.setOnClickListener(View ->{
+            startActivity(new Intent(getApplicationContext(), Notification.class));
         });
     }
 

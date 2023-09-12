@@ -21,11 +21,12 @@
             android:src="@drawable/menu" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/notification"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentEnd="true"
             android:layout_gravity="end"
-            android:src="@drawable/notifications" />
+            android:src="@drawable/notification" />
 
     </RelativeLayout>
 
