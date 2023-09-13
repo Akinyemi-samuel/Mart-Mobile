@@ -1,23 +1,18 @@
 package com.samfrosh.martmobile.adapter;
 
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.samfrosh.martmobile.R;
 import com.samfrosh.martmobile.dto.ProductCategory;
 
 import java.util.List;
-
-import lombok.AllArgsConstructor;
 
 
 public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategoryAdapter.ViewHolder> {
