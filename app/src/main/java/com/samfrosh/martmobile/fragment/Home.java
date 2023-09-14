@@ -1,5 +1,7 @@
 package com.samfrosh.martmobile.fragment;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import android.util.Log;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -18,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.samfrosh.martmobile.adapter.ProductCategoryAdapter;
 import com.samfrosh.martmobile.databinding.FragmentHomeBinding;
 import com.samfrosh.martmobile.dto.ProductCategory;
+import com.samfrosh.martmobile.environemnt.Environment;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -32,7 +36,7 @@ public class Home extends Fragment {
     RecyclerView recyclerView;
     ProductCategoryAdapter adapter;
 
-    private static final String PRODUCT_CATEGORY_API = "https://amused-tooth-production.up.railway.app/productstatus";
+    private static final String PRODUCT_CATEGORY_API = Environment.getBaseUrl()+"productstatus";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,13 +76,13 @@ public class Home extends Fragment {
                     recyclerView.setAdapter(adapter);
 
                 } catch (Exception e) {
-                    System.out.println("errr"+e);
+                    e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                System.out.println("error"+ error);
+                Log.e(TAG, "Volley Error: " + error.getMessage());
             }
         });
 
