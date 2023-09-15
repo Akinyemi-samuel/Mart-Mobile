@@ -10,18 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.samfrosh.martmobile.R;
-import com.samfrosh.martmobile.dto.ProductCategory;
+import com.samfrosh.martmobile.dto.ProductStatus;
 
 import java.util.List;
 
 
 public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategoryAdapter.ViewHolder> {
 
-    List<ProductCategory> list;
+    List<ProductStatus> list;
+
+     ItemClickListener itemClickListener;
     private int selectedItem = 0; // Store the selected item position
 
-    public ProductCategoryAdapter(List<ProductCategory> list) {
+    public ProductCategoryAdapter(List<ProductStatus> list, ItemClickListener itemClickListener) {
         this.list = list;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -33,7 +36,7 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryNames.setText(list.get(position).getCategoryName());
+        holder.categoryNames.setText(list.get(position).getStatusName());
 
         // Check if the current item is selected and update text appearance accordingly
         if (position == selectedItem) {
@@ -41,6 +44,15 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
         } else {
             holder.categoryNames.setTextColor(Color.BLACK);
         }
+
+        holder.categoryNames.setOnClickListener( v -> {
+            int previousSelected = selectedItem;
+            selectedItem = position;
+            notifyItemChanged(previousSelected);
+            notifyItemChanged(selectedItem);
+
+            itemClickListener.onItemClick(list.get(position));
+        });
     }
 
     @Override
@@ -56,16 +68,10 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
             super(itemView);
 
             categoryNames = itemView.findViewById(R.id.category);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int previousSelected = selectedItem;
-                    selectedItem = getAdapterPosition();
-                    notifyItemChanged(previousSelected);
-                    notifyItemChanged(selectedItem);
-                }
-            });
-
         }
+    }
+
+    public interface ItemClickListener {
+        void onItemClick(ProductStatus productStatus);
     }
 }
