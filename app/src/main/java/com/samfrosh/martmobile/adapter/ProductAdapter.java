@@ -1,5 +1,6 @@
 package com.samfrosh.martmobile.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.samfrosh.martmobile.R;
 import com.samfrosh.martmobile.dto.Product;
 
@@ -21,7 +23,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     List<Product> productList;
 
-    public ProductAdapter(List<Product> productList) {
+    Context context;
+
+    public ProductAdapter(List<Product> productList, Context context) {
+        this.context = context;
         this.productList = productList;
     }
 
@@ -36,6 +41,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.productName.setText(productList.get(position).getName());
         holder.unitPrice.setText(productList.get(position).getUnitPrice());
+        Glide.with(context).load(productList.get(position).getImageUrl()).into(holder.productImage);
     }
 
     @Override

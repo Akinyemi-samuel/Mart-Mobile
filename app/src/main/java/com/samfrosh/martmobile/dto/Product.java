@@ -12,9 +12,10 @@ public class Product {
     private String dateCreated;
     private String lastUpdated;
 
-    public Product(String name, String unitPrice) {
+    public Product(String name, String unitPrice, String imageUrl) {
         this.name = name;
         this.unitPrice = unitPrice;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {

@@ -52,10 +52,11 @@ public class ProductService {
 
                         String name = item.getString("name");
                         String price = item.getString("unitPrice");
+                        String productImage = item.getString("imageUrl");
 
-                        productList.add(new Product(name, price));
+                        productList.add(new Product(name, price, productImage));
                     }
-                    productAdapter = new ProductAdapter(productList);
+                    productAdapter = new ProductAdapter(productList, context);
                     recyclerView.setAdapter(productAdapter);
                 } catch (Exception e) {
                     e.printStackTrace();
