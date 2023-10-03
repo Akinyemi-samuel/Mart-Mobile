@@ -12,7 +12,7 @@
     <item
         android:title="Search"
         android:id="@+id/about"
-        android:icon="@drawable/searchs"
+        android:icon="@drawable/search"
         tools:ignore="HardcodedText" />
 
     <item
@@ -24,7 +24,7 @@
     <item
         android:title="Profile"
         android:id="@+id/profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/settings"
         tools:ignore="HardcodedText"/>
 
 </menu>
