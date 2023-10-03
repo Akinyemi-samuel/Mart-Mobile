@@ -16,8 +16,10 @@ import com.samfrosh.martmobile.dto.Product;
 
 import org.w3c.dom.Text;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
@@ -40,7 +42,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.productName.setText(productList.get(position).getName());
-        holder.unitPrice.setText(productList.get(position).getUnitPrice());
+        double number = Double.parseDouble(productList.get(position).getUnitPrice());
+        String COUNTRY = "US";
+        String LANGUAGE = "en";
+        String str = NumberFormat.getCurrencyInstance(new Locale(LANGUAGE, COUNTRY)).format(number);
+
+        holder.unitPrice.setText(str);
         Glide.with(context).load(productList.get(position).getImageUrl()).into(holder.productImage);
     }
 
