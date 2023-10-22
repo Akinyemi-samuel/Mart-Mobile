@@ -2,8 +2,8 @@ package com.samfrosh.martmobile.environemnt;
 
 public class Environment {
 
-    private static  final String STAGING_ENVIRONMENT = "https://localhost:8080/";
-    private static final String PRODUCTION_ENVIRONMENT = "https://amused-tooth-production.up.railway.app/";
+    private static final String STAGING_ENVIRONMENT = "https://localhost:8080/";
+    private static final String PRODUCTION_ENVIRONMENT = "https://mart-ecommerce-application.up.railway.app/";
 
     static EnvironmentType environmentType = EnvironmentType.PRODUCTION;
 
