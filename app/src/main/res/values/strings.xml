@@ -3,4 +3,6 @@
     <string name="Mobile_Name">Mart</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question_registraton"> Already have an account? <a href="">Login here</a></string>
+    <string name="registration_note">Kindly fill in the right information as it is in your legal document</string>
 </resources>

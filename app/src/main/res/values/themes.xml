@@ -9,6 +9,7 @@
         <item name="colorSecondary">@color/brown</item>
         <item name="colorSecondaryVariant">@color/brown</item>
         <item name="colorOnSecondary">@color/black</item>
+        <color name="textColorDark">@color/black</color>
         <item name="android:colorControlHighlight">@android:color/transparent</item>
 
     </style>
