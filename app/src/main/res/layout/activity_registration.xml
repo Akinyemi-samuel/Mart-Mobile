@@ -13,8 +13,8 @@
         android:padding="15dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/back" />
 
     </RelativeLayout>
@@ -63,40 +63,50 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/fname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="FirstName"
+                    android:fontFamily="@font/lato"
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/input_background"/>
 
                 <EditText
+                    android:id="@+id/lname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="FirstName"
+                    android:hint="LastName"
+                    android:fontFamily="@font/lato"
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/input_background"/>
 
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="FirstName"
+                    android:hint="Email"
+                    android:fontFamily="@font/lato"
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/input_background"/>
 
                 <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="FirstName"
+                    android:hint="Password"
+                    android:fontFamily="@font/lato"
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/input_background"/>
 
                 <Button
+                    android:id="@+id/registerBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="Sign Up"
                     android:padding="18dp"
-                    android:background="@drawable/input_background"/>
+                    android:background="#3F51B5"
+                    android:shadowColor="@color/black"/>
 
 
                 <TextView
@@ -105,7 +115,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:gravity="center"
                     android:paddingTop="10dp"
-                    android:onClick="login"
+                    android:onClick="goToLogin"
                     android:text="@string/question_registraton"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
