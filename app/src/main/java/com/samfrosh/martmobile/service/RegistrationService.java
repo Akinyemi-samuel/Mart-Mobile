@@ -23,7 +23,7 @@ public class RegistrationService {
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
-        String url = Environment.getBaseUrl()+"user/new";
+        final String url = Environment.getBaseUrl()+"user/new";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, new Response.Listener<JSONObject>() {
             @Override
