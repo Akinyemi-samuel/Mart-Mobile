@@ -1,16 +1,14 @@
 package com.samfrosh.martmobile.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.samfrosh.martmobile.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.samfrosh.martmobile.databinding.ActivityRegistrationBinding;
-import com.samfrosh.martmobile.dto.Role;
-import com.samfrosh.martmobile.service.RegistrationService;
+import com.samfrosh.martmobile.service.UserService;
 import com.samfrosh.martmobile.service.ValidateInputField;
 
 import org.json.JSONException;
@@ -29,9 +27,9 @@ public class Registration extends AppCompatActivity {
 
         binding.registerBtn.setOnClickListener(n ->{
             final String fname = validateInputField.apply(binding.fname);
-            final String lname = validateInputField.apply(binding.fname);
-            final String email = validateInputField.apply(binding.fname);
-            final String password = validateInputField.apply(binding.fname);
+            final String lname = validateInputField.apply(binding.lname);
+            final String email = validateInputField.apply(binding.email);
+            final String password = validateInputField.apply(binding.password);
 
             if(fname.isEmpty() || lname.isEmpty() || email.isEmpty() || password.isEmpty()){
                 Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show();
@@ -48,9 +46,6 @@ public class Registration extends AppCompatActivity {
         final String email = validateInputField.apply(binding.email);
         final String password = validateInputField.apply(binding.password);
 
-        System.out.println(email);
-        System.out.println(password);
-
         JSONObject registrationData = new JSONObject();
         try {
             registrationData.put("fullName", fullname);
@@ -60,7 +55,7 @@ public class Registration extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        RegistrationService registrationService = new RegistrationService();
+        UserService registrationService = new UserService();
         registrationService.RegisterUser(getApplicationContext(), registrationData);
     }
 
