@@ -15,15 +15,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi Samuel"
+                android:textStyle="bold"
+                android:drawableEnd="@drawable/hand_move"
+                android:textColor="@color/text_color"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:text="Discover fashion that suits your style"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
         <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/search"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/menu" />
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@id/notification"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/search" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/notification"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_centerInParent="true"
             android:layout_alignParentEnd="true"
             android:layout_gravity="end"
             android:src="@drawable/notification" />

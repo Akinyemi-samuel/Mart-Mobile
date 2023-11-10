@@ -7,16 +7,6 @@
     tools:context=".fragment.Home"
     android:orientation="vertical">
 
-    <com.google.android.material.search.SearchBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#28333333"
-        android:hint="What are you looking for?"
-        app:hideNavigationIcon="true"
-        app:navigationIcon="@drawable/searchbaricon"
-        tools:ignore="HardcodedText">
-    </com.google.android.material.search.SearchBar>
-
     <include layout="@layout/main_product_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

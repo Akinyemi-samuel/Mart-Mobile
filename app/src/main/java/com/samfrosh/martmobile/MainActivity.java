@@ -16,6 +16,7 @@ import com.samfrosh.martmobile.databinding.ActivityMainBinding;
 import com.samfrosh.martmobile.fragment.Cart;
 import com.samfrosh.martmobile.fragment.Home;
 import com.samfrosh.martmobile.fragment.Profile;
+import com.samfrosh.martmobile.fragment.Search;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.home) {
                     replaceFragment(new Home());
                 } else if (item.getItemId() == R.id.about) {
-                    replaceFragment(new Profile());
+                    replaceFragment(new Search());
                 } else if (item.getItemId() == R.id.cart) {
                     replaceFragment(new Cart());
                 } else if (item.getItemId() == R.id.profile) {
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.notification.setOnClickListener(View ->{
             startActivity(new Intent(getApplicationContext(), Notification.class));
+        });
+
+        binding.search.setOnClickListener( n ->{
+            replaceFragment(new Search());
         });
     }
 

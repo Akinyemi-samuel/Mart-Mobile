@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,8 +41,12 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
         // Check if the current item is selected and update text appearance accordingly
         if (position == selectedItem) {
-            holder.categoryNames.setTextColor(Color.parseColor("#8E313A"));
+            int drawableBackgroundResId = R.drawable.product_menu_design_curve; // Replace with your background drawable resource ID
+            holder.categoryNames.setBackgroundResource(drawableBackgroundResId);
+            holder.categoryNames.setTextColor(Color.WHITE);
         } else {
+            int drawableBackgroundResId = R.drawable.product_menu_design_curve_inactive; // Replace with your background drawable resource ID
+            holder.categoryNames.setBackgroundResource(drawableBackgroundResId);
             holder.categoryNames.setTextColor(Color.BLACK);
         }
 
